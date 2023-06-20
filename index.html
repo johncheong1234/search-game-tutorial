@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Guess the Search Term!</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src='jquery.zoom.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel='stylesheet' href='search_game.css'>
+        <script>
+                
+        </script>
+    </head>
+
+    <body>
+
+        <header class="masthead">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1>Guess the Word</h1>
+                        <p>
+                            To play this game, click on the 
+                            <strong>
+                                'Play!'
+                            </strong>
+                            button. 
+                            <br>
+                            You will see an image. 
+                            Try to guess what word was used to search for
+                            that image and enter your word in the field.
+                            Click <strong>Guess</strong>. 
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p>
+                            If you guessed wrong, try again or load more photos 
+                            to give more clues as to what the word might have been. 
+                            For every extra photo you load/extra guess, points will
+                            be deducted.
+                            <strong>Hover</strong> your mouse over the photo to zoom in
+                            :)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="messages_container">
+            <div id="guesses">
+
+            </div>
+            <div id="number_loaded">
+
+            </div>
+        </div>
+
+        <form id="guess" onsubmit="return false">
+            <div class="form-group">
+                <input type=" 'text" name="guess" id="guess_field">
+                <br>
+                <input class="btn btn-primary" type="button" onclick = 'Check()'
+                 value = 'Guess!' id="guess_button" />
+                 <input class="btn btn-success" type="button" onclick="play()"
+                 value = "Play!" />
+                 <input id="giveUp" class="btn btn-warning" type="button" onclick="giveUp_function()"
+                 value="Give up :(" />
+            </div>
+        </form>
+
+        <div id="pics">
+
+        </div>
+        <div class="col-mid-12 text-center">
+            <button id="showMore" onclick = 'showMore()'
+            class="btn btn-danger">
+            Load more Photos!
+            </button>
+        </div>
+
+    </body>
+
+    <script src="word_list.js"></script>
+    <script src="search_game.js"></script>
+</html>
